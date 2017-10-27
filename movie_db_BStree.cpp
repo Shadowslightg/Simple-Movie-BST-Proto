@@ -121,3 +121,13 @@ void btree::destroy_tree()
 {
 	destroy_tree (root);
 }
+
+ofstream movie_list;
+
+int main()
+{
+	movie_list.open("movielist.txt");
+	while (fstream.eof() == NULL)
+	{
+		fstream
+}	
