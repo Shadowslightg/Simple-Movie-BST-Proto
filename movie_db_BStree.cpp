@@ -97,3 +97,27 @@ NODE *btree::search (int key, NODE * leaf)
 	}
 }
 
+void btree::insert(int key)
+{
+	if (root !=NULL)
+	{
+		insert (key, root);
+	}
+	else
+	{
+		root = new NODE;
+		root -> key_value = key;
+		root -> left = NULL;
+		root -> right = NULL;
+	}
+}
+
+NODE * btree::search( int key)
+{
+	return search(key, root);
+}
+
+void btree::destroy_tree()
+{
+	destroy_tree (root);
+}
