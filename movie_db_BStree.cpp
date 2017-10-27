@@ -5,8 +5,8 @@ using namespace std;
 struct NODE
 {
 	int key_value;
-	NODE * pleft;
-	NODE * pright;
+	NODE * left;
+	NODE * right;
 };
 
 class btree
