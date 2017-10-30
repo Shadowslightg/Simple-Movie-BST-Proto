@@ -4,17 +4,20 @@
 #include "BST.h"
 using namespace std;
 
-BST::BST()
+//this function sets the pointer of the Node called root 
+//to the NUll termination value
+BST::BST()	
 {
 	root = NULL;
 }
-
+//this function is used to create a new instance of the struct Node
+//and creats a Left and Right Pointer for the BST
 BST::Node * BST::CreateLeaf(int key)
 {
 	Node * n = new Node;
-	n-> key = key;
-	n-> Left = NULL;
-	n-> Right = NULL;
+	n-> key = key;		
+	n-> Left = NULL;	//set the Left Pointer to a terminating value
+	n-> Right = NULL;	//set the Right Pointer to a terminating value
 
 	return n;
 }
@@ -31,6 +34,10 @@ void BST::AddLeafPrivate (int key, Node * ptr)
 	{
 		root = CreateLeaf(key);
 	}
+	else 
+	{
+		cout << "The Key " << key << "has already been added to the tree\n" << endl;
+	}
 	else if(key < ptr->key)	//Left leaf creation
 	{
 		if (ptr -> Left != NULL)
@@ -42,7 +49,7 @@ void BST::AddLeafPrivate (int key, Node * ptr)
 			ptr->Left = CreateLeaf(key);
 		}
 	}
-	else if(key > ptr->key) //right leaf creation
+	else if(key > ptr->key) //Right leaf creation
 	{
 		if (ptr -> Right != NULL)
 		{
@@ -52,10 +59,6 @@ void BST::AddLeafPrivate (int key, Node * ptr)
 		{
 			ptr->Right = CreateLeaf(key);
 		}
-	}
-	else 
-	{
-		cout << "The Key " << key << "has already been added to the tree\n" << endl;
 	}
 }
 
