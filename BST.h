@@ -4,15 +4,15 @@
 class BST
 {
 private:
-	struct Node
+	struct Node	//creates the Node for the tree; The ROOT
 	{
 		int key;
 		Node * Left;
 		Node * Right;
 	};
 	Node * root;
-
-	void AddLeafPrivate(int key, Node * ptr);
+			//this is the end of the ROOT Node. 
+	void AddLeafPrivate(int key, Node * ptr);	//function creates a new leaf for the Node
 	void PrintInOrderPrivate(Node * ptr);
 	Node * ReturnNodePrivate(int key, Node * ptr);
 	int FindSmallestPrivate(Node * ptr);
@@ -21,7 +21,7 @@ private:
 	//void RemoveMatch(Node * parent, Node * match, bool Left);
 
 public:
-	BST();
+	BST();	//Null terminator assignment
 	Node * CreateLeaf(int key);
 	void AddLeaf(int key);
 	void PrintInOrder();
