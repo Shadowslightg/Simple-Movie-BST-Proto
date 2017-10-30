@@ -15,17 +15,19 @@ private:
 	void AddLeafPrivate(int key, Node * ptr);	//function creates a new leaf for the Node
 	void PrintInOrderPrivate(Node * ptr);
 	Node * ReturnNodePrivate(int key, Node * ptr);
+	Node * CreateLeaf(int key);
+	Node * ReturnNode(int key);
 	int FindSmallestPrivate(Node * ptr);
 	void RemoveNodePrivate(int key, Node * parent);
 	void RemoveRootMatch();		//remove the root node from the tree
 	void RemoveMatch(Node * parent, Node * match, bool Left); 	//remove a matching node from the tree that is not a root
+	void RemoveSubtree (Node * ptr);
 	
 public:
 	BST();	//Null terminator assignment
-	Node * CreateLeaf(int key);
+	~BST();
 	void AddLeaf(int key);
 	void PrintInOrder();
-	Node * ReturnNode(int key);
 	int ReturnRootKey();
 	void PrintChildren(int key);
 	int FindSmallest();
