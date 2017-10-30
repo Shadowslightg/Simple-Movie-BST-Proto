@@ -317,3 +317,32 @@ void BST::RemoveMatch(Node * parent, Node * match, bool Left)
 	}
 }
 	
+BST::~BST();
+{
+	RemoveSubtree(root);
+}
+
+void BST::RemoveSubtree(Node * ptr)
+{
+	if (ptr != NULL)
+	{
+		if (ptr->Left != NULL)
+		{
+			RemoveSubtree(ptr->Left);
+		}
+		if (ptr->Right != NULL)
+		{
+			RemoveSubtree(ptr->Right);
+		}
+		cout << "Deleting the Node containing key: " <<ptr->key << endl; 
+		delete ptr;
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
