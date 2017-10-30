@@ -10,12 +10,13 @@ private:
 		Node * Left;
 		Node * Right;
 	};
-	Node * root;
-			//this is the end of the ROOT Node. 
+	Node * root;	//used to reference the top of the tree root Node
+			//this is the end of the ROOT Node
+	
 	void AddLeafPrivate(int key, Node * ptr);	//function creates a new leaf for the Node
 	void PrintInOrderPrivate(Node * ptr);
 	Node * ReturnNodePrivate(int key, Node * ptr);
-	Node * CreateLeaf(int key);
+	Node * CreateLeaf(int key);	//create a leaf with a given value
 	Node * ReturnNode(int key);
 	int FindSmallestPrivate(Node * ptr);
 	void RemoveNodePrivate(int key, Node * parent);
@@ -24,7 +25,7 @@ private:
 	void RemoveSubtree (Node * ptr);
 	
 public:
-	BST();	//Null terminator assignment
+	BST();	//constructor; Called anytime we create a new instance of BST
 	~BST();
 	void AddLeaf(int key);
 	void PrintInOrder();
