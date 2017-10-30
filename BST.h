@@ -17,9 +17,9 @@ private:
 	Node * ReturnNodePrivate(int key, Node * ptr);
 	int FindSmallestPrivate(Node * ptr);
 	void RemoveNodePrivate(int key, Node * parent);
-	void RemoveRootMatch();
-	//void RemoveMatch(Node * parent, Node * match, bool Left);
-
+	void RemoveRootMatch();		//remove the root node from the tree
+	void RemoveMatch(Node * parent, Node * match, bool Left); 	//remove a matching node from the tree that is not a root
+	
 public:
 	BST();	//Null terminator assignment
 	Node * CreateLeaf(int key);
