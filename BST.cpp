@@ -1,64 +1,67 @@
 #include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
+
 #include "BST.h"
+
 using namespace std;
 
 //this function sets the pointer of the Node called root 
 //to the NUll termination value
 BST::BST()	
 {
-	root = NULL;
+	root = NULL;	//to ensure root is not pointing to anything when created
 }
 //this function is used to create a new instance of the struct Node
 //and creats a Left and Right Pointer for the BST
 BST::Node * BST::CreateLeaf(int key)
 {
-	Node * n = new Node;
-	n-> key = key;		
+	Node * n = new Node;	//pointer we will be returning
+	n-> key = key;		//access key variable set equal to key we are passing in
 	n-> Left = NULL;	//set the Left Pointer to a terminating value
 	n-> Right = NULL;	//set the Right Pointer to a terminating value
 
-	return n;
+	return n;		//returns pointer of newly created Node
 }
-
+//this function is designed to add a new node without having to account for the root 
+//of the tree; it will just take in a value and add it to the tree
 void BST::AddLeaf(int key)
 {
-	AddLeafPrivate (key, root);
+	AddLeafPrivate (key, root);	
 }
-
-
+//this function is desinged to add a new leaf based off of the root pointer
+//
 void BST::AddLeafPrivate (int key, Node * ptr)
 {
 	if (root==NULL)	//if the tree is empty
 	{
-		root = CreateLeaf(key);
-	}
-	else 
-	{
-		cout << "The Key " << key << "has already been added to the tree\n" << endl;
+		root = CreateLeaf(key);	//will point to a new leaf with the current key value
 	}
 	else if(key < ptr->key)	//Left leaf creation
 	{
-		if (ptr -> Left != NULL)
+		if (ptr -> Left != NULL)	//if Left ptr has a value; tranverse left and check again
 		{
 			AddLeafPrivate(key, ptr->Left);		//location where we add new leaf to tree
 		}
-		else
+		else				//if its not create a new leaf and pass in the value key
 		{
 			ptr->Left = CreateLeaf(key);
 		}
 	}
 	else if(key > ptr->key) //Right leaf creation
 	{
-		if (ptr -> Right != NULL)
+		if (ptr -> Right != NULL)	//if Right ptr has a value; tranverse right and check again
 		{
 			AddLeafPrivate(key, ptr->Right);	//location where we add new leaf to tree
 		}
-		else
+		else				//if its not create a new leaf and pass in the value key
 		{
 			ptr->Right = CreateLeaf(key);
 		}
+	}
+	else 
+	{
+		cout << "The Key " << key << "has already been added to the tree\n" << endl;
 	}
 }
 
