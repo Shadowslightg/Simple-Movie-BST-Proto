@@ -47,6 +47,36 @@ int main()
 				mtTree.PrintInOrdr();
 				cout << endl;
 	system("pause");
+//**********************************************				
+//**********************************************
+// This next part is the code for the file functions
+				
+ifstream infile;
+string text; 
+int blank =0, 
+int text=0;
+
+infile.open("Movie_List.txt");
+while (getline(infile, text))
+{
+	if (text == "")
+	{
+		++blank;
+	}
+	else
+	{
+		++text;
+	}
+}
+cout << "Blank: " << blank << endl
+cout << "With Text: " << text << endl;
+return 0;				
+				
+				
+				
+				
+//**********************************************				
+//**********************************************			
     return 0;
 }
 
