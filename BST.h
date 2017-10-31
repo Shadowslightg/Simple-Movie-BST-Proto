@@ -1,5 +1,6 @@
 #include "stdafx.h"
-
+#ifndef BST_H
+#define BST_H
 
 class BST
 {
@@ -36,3 +37,6 @@ public:
 
 
 };
+
+#endif BST_H
+
