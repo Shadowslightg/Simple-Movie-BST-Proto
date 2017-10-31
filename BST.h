@@ -27,7 +27,7 @@ private:
 public:
 	BST();	//constructor; Called anytime we create a new instance of BST
 	~BST();
-	void AddLeaf(int key);
+	void AddLeaf(int key);	//Adding a new Node=leaf to tree; specifying value
 	void PrintInOrder();
 	int ReturnRootKey();
 	void PrintChildren(int key);
