@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
-
+#include <vector>
 #include "BST.cpp"
 using namespace std;
 
@@ -14,7 +14,7 @@ struct Movies_Bio
 {
 	string Movie Title;
 	int Year;
-	char Actors[];
+	Actors[];
 };
 
 typedef Movies_Bio info; 
