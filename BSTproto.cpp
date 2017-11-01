@@ -14,7 +14,7 @@ struct Movies_Bio
 {
 	string Movie Title;
 	int Year;
-	vector <char> Actors[];
+	vector <char> Actors;
 };
 
 typedef Movies_Bio info; 
