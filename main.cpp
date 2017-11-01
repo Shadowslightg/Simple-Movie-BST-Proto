@@ -11,7 +11,7 @@ int main ()
 {
 ifstream infile;
 string text; 
-int blank =0, text=0;
+int blank =0, test=0;
 
 string filename;
 	cout << "What is the name of your data file?" << endl;
@@ -28,7 +28,7 @@ while (getline(infile, text))
 	}
 	else
 	{
-		++text;
+		++test;
 	}
 }
 cout << "Blank: " << blank << endl
